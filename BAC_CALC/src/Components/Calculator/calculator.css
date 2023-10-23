@@ -29,6 +29,18 @@
     cursor: pointer;
     /* Removed margin: 20; because it's invalid without units */
   }
+
+  .GenderPic{
+    height: 100px; /* adjust as needed */
+    width: 100px; /* adjust as needed */
+    background-color: white;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid transparent; /* Adjust border color as needed */
+    cursor: pointer;
+
+  }
   
   .buttons-grid button:hover, .buttons-grid button:focus {
     border-color: orange; /* highlight border on hover */

@@ -9,6 +9,12 @@ import lokoPic from '../../assets/drinkPhotos/lokoPic.jpg';
 import winePic from '../../assets/drinkPhotos/winePic.jpg';
 import shotPic from '../../assets/drinkPhotos/shotPic.jpg';
 import margaritaPic from '../../assets/drinkPhotos/margaritaPic.jpg';
+import jelloPic from '../../assets/drinkPhotos/jelloPic.jpg';
+import borgPic from '../../assets/drinkPhotos/borgPic.png';
+import manPic from '../../assets/genderPics/manPic.jpg';
+import womanPic from '../../assets/genderPics/womanPic.webp';
+import neutralPic from '../../assets/genderPics/neutralPic.jpg';
+
 
 const Calculator = () => {
   const [standardDrinkNum, setStandardDrinkNum] = useState(0);
@@ -31,6 +37,10 @@ const Calculator = () => {
    setStandardDrinkNum(0);
   };
 
+  const setSex = (value) => {
+    setGender(value);
+   };
+
   return (
 
     <div className='calculator-container'>
@@ -47,14 +57,10 @@ const Calculator = () => {
         </label>
       </div>
       <div>
-        <label>
-          Gender:
-          <select value={gender} onChange={(e) => setGender(e.target.value)}>
-            <option value="">Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </label>
+        <h3>Gender</h3>
+          <button className='GenderPic' onClick={() => setSex('male')} style={{ backgroundImage: {manPic} }}></button>
+          <button className='GenderPic' onClick={() => setSex('female')} style={{ backgroundImage: {womanPic} }}></button>
+          <button className='GenderPic' onClick={() => setSex('other')} style={{ backgroundImage: {neutralPic} }}></button>
       </div>
       <div>
         <label>
@@ -105,7 +111,13 @@ const Calculator = () => {
         />
 
         <CalculatorButton 
-                    image={shotPic} 
+                    image={jelloPic} 
+                    value={1} 
+                    onAdd={handleAdd}
+                />
+
+        <CalculatorButton 
+                    image={borgPic} 
                     value={1} 
                     onAdd={handleAdd}
                 />
