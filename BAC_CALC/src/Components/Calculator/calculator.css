@@ -1,0 +1,46 @@
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2%; /* relative unit */
+    width: 90%; /* relative unit */
+    max-width: 600px; /* adjust as needed */
+    margin: 0 auto; /* center the container */
+  }
+  
+  .buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* this makes a responsive number of columns */
+    gap: 10px;
+    width: 100%; /* relative unit */
+    max-width: 400px; /* adjust as needed */
+    margin: 20px auto; /* some space and centering */
+  }
+  
+  .buttons-grid button {
+    height: 100px; /* initial size, will be overridden by media query */
+    width: 100px; /* initial size, will be overridden by media query */
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Media queries for different screen sizes */
+  @media (max-width: 768px) {
+    .buttons-grid button {
+      height: 80px; /* smaller size for smaller screens */
+      width: 80px; /* smaller size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .buttons-grid button {
+      height: 60px; /* even smaller size for mobile screens */
+      width: 60px; /* even smaller size for mobile screens */
+    }
+  }
+  
+  /* Add similar styles for your inputs and other elements */
+  

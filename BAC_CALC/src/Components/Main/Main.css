@@ -1,0 +1,45 @@
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    gap: 2rem; 
+    margin: auto;
+    text-align: center;
+}
+
+.main-header {
+    text-align: center;
+    margin: 0; 
+}
+
+.logo-Container {
+    width: 10vw;
+    height: auto;
+}
+
+.BeerLogo {
+    height: 15vh; 
+    width: auto; 
+}
+
+.button-container {
+    display: flex; 
+    justify-content: center; 
+    width: 100%; 
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: none; 
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+}
