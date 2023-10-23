@@ -1,25 +1,30 @@
 /* Styles for Footer component */
 .FooterSection {
-    position: fixed;
+    position:relative;
+    margin-top: 0px;
     bottom: 0;
     width: 100%;
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    display: flexbox;
+    min-height: 10vh; 
 }
 
 .FooterSection ul {
     list-style-type:none;
-    margin: 0;
+    margin:0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     align-items: center;
+    justify-content: space-around;
 }
 
 .FooterSection li {
     display: inline;
     font-size: 3vh;
+    margin: 2;
 
 }
 

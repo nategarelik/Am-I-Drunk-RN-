@@ -1,9 +1,9 @@
 import React from 'react';
-import './calculator.css'
+import './Calculator.css'
 
 const CalculatorButton = ({ image, value, onAdd }) => {
   return (
-    <button onClick={() => onAdd(value)} style={{ background: `url(${image})`, height: '50px', width: '50px' }}>
+    <button className='CalcButt' onClick={() => onAdd(value)} style={{ backgroundImage: `url(${image})` }}>
     </button>
   );
 };

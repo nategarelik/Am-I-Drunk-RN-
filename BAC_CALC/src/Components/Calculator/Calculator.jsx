@@ -32,7 +32,9 @@ const Calculator = () => {
   };
 
   return (
+
     <div className='calculator-container'>
+      <h1>Calculate Your BAC</h1>
       <div>
         <label>
           Weight (lbs):
@@ -101,6 +103,12 @@ const Calculator = () => {
             value={1} 
             onAdd={handleAdd}
         />
+
+        <CalculatorButton 
+                    image={shotPic} 
+                    value={1} 
+                    onAdd={handleAdd}
+                />
 
       </div>
 

@@ -3,44 +3,45 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2%; /* relative unit */
-    width: 90%; /* relative unit */
-    max-width: 600px; /* adjust as needed */
-    margin: 0 auto; /* center the container */
+    padding: 2%; 
+    width: 90%; 
+    max-width: 600px; 
+    margin: 0 auto; 
   }
-  
+
   .buttons-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* this makes a responsive number of columns */
-    gap: 10px;
-    width: 100%; /* relative unit */
-    max-width: 400px; /* adjust as needed */
-    margin: 20px auto; /* some space and centering */
+    grid-template-columns: repeat(4, 1fr); /* creates a 4-column layout */
+    gap: 20px; /* adjust as needed */
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
   }
   
   .buttons-grid button {
-    height: 100px; /* initial size, will be overridden by media query */
-    width: 100px; /* initial size, will be overridden by media query */
-    background-size: cover;
+    height: 100px; /* adjust as needed */
+    width: 100px; /* adjust as needed */
+    background-color: white;
+    background-size: contain;
     background-position: center;
-    border: none;
+    background-repeat: no-repeat;
+    border: 2px solid transparent; /* Adjust border color as needed */
     cursor: pointer;
+    /* Removed margin: 20; because it's invalid without units */
   }
   
-  /* Media queries for different screen sizes */
+  .buttons-grid button:hover, .buttons-grid button:focus {
+    border-color: orange; /* highlight border on hover */
+    background-color: transparent; /* keep background transparent on hover */
+  }
+  
   @media (max-width: 768px) {
+    .buttons-grid {
+      grid-template-columns: repeat(4, 1fr); /* keeps a 4-column layout */
+    }
     .buttons-grid button {
-      height: 80px; /* smaller size for smaller screens */
-      width: 80px; /* smaller size for smaller screens */
+      height: 60px; /* smaller size for smaller screens */
+      width: 60px; /* smaller size for smaller screens */
     }
   }
-  
-  @media (max-width: 480px) {
-    .buttons-grid button {
-      height: 60px; /* even smaller size for mobile screens */
-      width: 60px; /* even smaller size for mobile screens */
-    }
-  }
-  
-  /* Add similar styles for your inputs and other elements */
   
