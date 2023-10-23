@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CalculatorButton from './CalculatorButton';
 import './calculator.css'
+import GenderButt from './GenderButt';
 
 // Pic Imports
 import clawPic from '../../assets/drinkPhotos/clawPic.jpg';
@@ -44,7 +45,7 @@ const Calculator = () => {
   return (
 
     <div className='calculator-container'>
-      <h1>Calculate Your BAC</h1>
+      <h1 id='mainHead'>Calculate Your BAC</h1>
       <div>
         <label>
           Weight (lbs):
@@ -56,11 +57,14 @@ const Calculator = () => {
           />
         </label>
       </div>
-      <div>
-        <h3>Gender</h3>
-          <button className='GenderPic' onClick={() => setSex('male')} style={{ backgroundImage: {manPic} }}></button>
-          <button className='GenderPic' onClick={() => setSex('female')} style={{ backgroundImage: {womanPic} }}></button>
-          <button className='GenderPic' onClick={() => setSex('other')} style={{ backgroundImage: {neutralPic} }}></button>
+      <div className='genderSelect'>
+        <h3 className='genderHeader'>Gender</h3>
+        <div className='genderPic-grid'>
+          <GenderButt name={'Man'} image={manPic} value={'male'} setSex={setSex}/>
+          <GenderButt name={'Woman'} image={womanPic} value={'female'} setSex={setSex}/>
+          <GenderButt name={'Other'} image={neutralPic} value={'other'} setSex={setSex}/>
+        </div>
+        
       </div>
       <div>
         <label>

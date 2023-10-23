@@ -9,6 +9,10 @@
     margin: 0 auto; 
   }
 
+  #mainHead {
+    font-size: 3.9vh;
+  }
+  
   .buttons-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* creates a 4-column layout */
@@ -30,11 +34,25 @@
     /* Removed margin: 20; because it's invalid without units */
   }
 
-  .GenderPic{
-    height: 100px; /* adjust as needed */
-    width: 100px; /* adjust as needed */
-    background-color: white;
-    background-size: contain;
+  .genderSelect{
+    text-align: center;
+    height: 150px;
+
+  }
+  .genderPic-grid{
+    display: flex;
+    gap: 20px; /* adjust as needed */
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .GenderButt{
+    background-size: cover;
+    height: 45px;
+    width:30px;
     background-position: center;
     background-repeat: no-repeat;
     border: 2px solid transparent; /* Adjust border color as needed */
@@ -44,7 +62,6 @@
   
   .buttons-grid button:hover, .buttons-grid button:focus {
     border-color: orange; /* highlight border on hover */
-    background-color: transparent; /* keep background transparent on hover */
   }
   
   @media (max-width: 768px) {
