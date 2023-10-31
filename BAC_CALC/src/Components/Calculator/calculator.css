@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 .calculator-container {
     display: flex;
     flex-direction: column;
@@ -7,12 +8,49 @@
     width: 90%; 
     max-width: 600px; 
     margin: 0 auto; 
+    gap: 10px;
   }
 
+  .popupDiv{
+    display:flex;
+    gap: 10px;
+  }
+  .hourSelectDiv{
+    left: 50%;
+    margin-left: 2px;
+  }
+
+  .sliderButt {
+    height: 50px;
+    width: 40px;
+  }
   #mainHead {
     font-size: 3.9vh;
   }
-  
+
+  .calculateButtDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .calculateButtDiv button{
+    margin-top: 2px;
+  }
+  .calculateButtDiv p{
+    margin-top: 4px;
+    
+  }
+  .genderButtDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .genderButtDiv p{
+    margin-top: 4px;
+  }
   .buttons-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* creates a 4-column layout */
@@ -20,6 +58,27 @@
     width: 100%;
     max-width: 400px;
     margin: 20px auto;
+  }
+  .numberDiv{
+    margin:auto;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 65%;
+    border: 4px solid; 
+    border-color: white;
+    height:45px;
+  }
+
+  .numberDiv p{
+    margin-right: 15px;
+  }
+  .BAC-Display{
+    
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
   }
   
   .buttons-grid button {
@@ -50,9 +109,11 @@
   }
 
   .GenderButt{
-    background-size: cover;
-    height: 45px;
-    width:30px;
+    background-size: contain;
+    min-height: 55px;
+    min-width:30px;
+    height: max-content;
+    width: max-content;
     background-position: center;
     background-repeat: no-repeat;
     border: 2px solid transparent; /* Adjust border color as needed */
@@ -60,6 +121,12 @@
 
   }
   
+  .calculateDiv{
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+    gap: 25px;
+  }
   .buttons-grid button:hover, .buttons-grid button:focus {
     border-color: orange; /* highlight border on hover */
   }
@@ -73,4 +140,3 @@
       width: 60px; /* smaller size for smaller screens */
     }
   }
-  

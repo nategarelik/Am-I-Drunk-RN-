@@ -9,7 +9,15 @@
     margin: auto;
     text-align: center;
 }
+.bac-container{
+    min-height: 79vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bac-header {
 
+}
 .main-header {
     text-align: center;
     margin: 0; 

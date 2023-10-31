@@ -1,10 +1,14 @@
 import React from 'react';
 import './Calculator.css'
 
-const CalculatorButton = ({ image, value, onAdd }) => {
+const CalculatorButton = ({ image, value, onAdd, name }) => {
   return (
-    <button className='CalcButt' onClick={() => onAdd(value)} style={{ backgroundImage: `url(${image})` }}>
+    <div className='calculateButtDiv'>
+      <button className='CalcButt' onClick={() => onAdd(value)} style={{ backgroundImage: `url(${image})` }}>
     </button>
+    <p>{name}</p>
+
+    </div>
   );
 };
 
