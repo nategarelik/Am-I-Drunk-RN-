@@ -1,7 +1,7 @@
 import { useState } from 'react'; 
 import './App.css';
 import Layout from './Layouts/Layout';
-import BACContext from './Components/Calculator/BACcontext';
+import BACContext from './Components/Calculator/BACContext';
 import Launch from './Components/Launch/Launch';
 import About from './Components/About/About';
 import Calculator from './Components/Calculator/Calculator';

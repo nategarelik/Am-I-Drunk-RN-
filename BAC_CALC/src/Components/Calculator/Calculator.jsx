@@ -6,7 +6,7 @@ import PopupCard from './PopupCard/PopupCard';
 import SliderComponent from './SliderComponent';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import BACContext from './BACcontext';
+import BACContext from './BACContext';
 // Pic Imports
 import clawPic from '../../assets/drinkPhotos/clawPic.jpg';
 import Beerpic from '../../assets/drinkPhotos/BeerPic.webp';
@@ -69,6 +69,7 @@ const handleCalculate = () => {
       }
       setBAC(BAC);
       console.log(BAC, weight, gender);
+      localStorage.setItem('BAC', BAC.toString());
   }
 
   if (gender === 'female') {
@@ -81,10 +82,10 @@ const handleCalculate = () => {
       }
       setBAC(BAC);
       console.log(BAC, weight, gender);
+      localStorage.setItem('BAC', BAC.toString());
   }
   navigate('BACpage');
 };
-
 
   const numberDropdownRef = React.useRef(null);
   const createDropdown = () =>{
@@ -108,6 +109,7 @@ const handleCalculate = () => {
 
   const setSex = (value) => {
     setGender(value);
+    togglePopup()
 };
 
   return (
@@ -125,14 +127,15 @@ const handleCalculate = () => {
             <div className='genderSelect'>
               <h3 className='genderHeader'>Gender</h3>
               <div className='genderPic-grid'>
-              <GenderButt name={'Man'} image={manPic} value={'male'} setSex={setSex} gender={gender} />
-              <GenderButt name={'Woman'} image={womanPic} value={'female'} setSex={setSex} gender={gender} />
-              <GenderButt name={'Other'} image={neutralPic} value={'other'} setSex={setSex} gender={gender} />
+              <GenderButt name={'Man'} image={manPic} value={'Male'} setSex={setSex} gender={gender} />
+              <GenderButt name={'Woman'} image={womanPic} value={'Female'} setSex={setSex} gender={gender} />
+              {/* <GenderButt name={'Other'} image={neutralPic} value={'other'} setSex={setSex} gender={gender} /> */}
 
               </div>
             
             </div>
           </PopupCard>
+          {gender ? <p>Gender: {gender}</p> : <p>Gender:</p>}
 
         </div>
 
@@ -151,6 +154,7 @@ const handleCalculate = () => {
           </label>
         </div>
           </PopupCard>
+          {weight ? <p>Weight:{weight}</p> : <p>Weight:</p>}
 
         </div>
 
