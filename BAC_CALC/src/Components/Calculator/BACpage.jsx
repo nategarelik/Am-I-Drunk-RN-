@@ -1,6 +1,6 @@
 // initialBACpage.jsx
 import React, { useContext, useState, useEffect } from 'react';
-import BACContext from './BACContext.js';
+// import BACContext from './BACContext.js';
 import './BAC.css'
 
 const BACpage = () => {
@@ -16,6 +16,7 @@ const BACpage = () => {
   const savedBAC = localStorage.getItem('BAC');
   const initialBAC = savedBAC ? parseFloat(savedBAC) : 0;
   // const { initialBAC } = useContext(BACContext);
+  
   //useStates
   const [intoxLevel, setintoxLevel] = useState('No Level Set.')
   const [intoxPhoto, setIntoxPhoto] = useState('')

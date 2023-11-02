@@ -148,6 +148,7 @@ const handleCalculate = () => {
             <input 
               type="number" 
               value={weight} 
+              onClick={(e) => e.target.value = ""}
               onChange={(e) => setWeight(e.target.value)} 
               placeholder="Enter your weight"
             />
