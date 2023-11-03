@@ -111,7 +111,7 @@ const BACpage = () => {
             <h1 style={{color:textColor}} className='bac-header'>Your BAC is: {initialBAC || 'No BAC calculated'}</h1>
             <div className='logo-Container'>
              
-              <div id="gifImage"> <img src={intoxPhoto} alt="intoxPhoto" /></div>
+              <div id="gifImage"> <img className="gif" src={intoxPhoto} alt="intoxPhoto" /></div>
             </div>
 
             <h1 style={{color:textColor}} className='lower-header'>{lowerHeader}</h1>
