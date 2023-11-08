@@ -30,6 +30,7 @@ const Calculator = () => {
   const { setBAC } = useContext(BACContext);
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
+  const [weightSet, setweightSet] = useState(false);
   const [showWeightPopup, setShowWeightPopup] = useState(false);
   const [BorgDisplay, setBorgDisplay] = useState('none')
 
@@ -60,7 +61,7 @@ const handleCalculate = () => {
   const weightInGrams = weight / 0.0022046;
 
 
-  if ((gender === 'Male')) {
+  if ((gender === 'Male' && weightSet)) {
       const weightCalcNew = weightInGrams * 0.68;
       const BACraw = standardDrinkCalcGram / weightCalcNew;
       let BAC = BACraw * 100;
@@ -73,7 +74,7 @@ const handleCalculate = () => {
       navigate('BACpage', { state: { BAC: BAC } });
   }
 
-  if (gender === 'Female') {
+  if (gender === 'Female' && weightSet) {
       const weightCalcNew = weightInGrams * 0.55;
       const BACraw = standardDrinkCalcGram / weightCalcNew;
       let BAC = BACraw * 100;
@@ -117,6 +118,7 @@ if (weight === 0) {
 
   const setSex = (value) => {
     setGender(value);
+    setWeight(true)
     togglePopup()
 };
 
