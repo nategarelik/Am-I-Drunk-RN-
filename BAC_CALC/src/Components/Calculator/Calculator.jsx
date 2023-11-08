@@ -61,7 +61,7 @@ const handleCalculate = () => {
   const weightInGrams = weight / 0.0022046;
 
 
-  if ((gender === 'Male' && weightSet)) {
+  if ((gender === 'Male')) {
       const weightCalcNew = weightInGrams * 0.68;
       const BACraw = standardDrinkCalcGram / weightCalcNew;
       let BAC = BACraw * 100;
@@ -74,7 +74,7 @@ const handleCalculate = () => {
       navigate('BACpage', { state: { BAC: BAC } });
   }
 
-  if (gender === 'Female' && weightSet) {
+  if (gender === 'Female') {
       const weightCalcNew = weightInGrams * 0.55;
       const BACraw = standardDrinkCalcGram / weightCalcNew;
       let BAC = BACraw * 100;
