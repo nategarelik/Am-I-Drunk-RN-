@@ -59,7 +59,8 @@ const handleCalculate = () => {
   // Convert weight from pounds to grams
   const weightInGrams = weight / 0.0022046;
 
-  if ((gender === 'male') || (gender === 'other')) {
+
+  if ((gender === 'Male')) {
       const weightCalcNew = weightInGrams * 0.68;
       const BACraw = standardDrinkCalcGram / weightCalcNew;
       let BAC = BACraw * 100;
@@ -69,10 +70,10 @@ const handleCalculate = () => {
       }
       setBAC(BAC);
       console.log(BAC, weight, gender);
-      localStorage.setItem('BAC', BAC.toString());
+      navigate('BACpage', { state: { BAC: BAC } });
   }
 
-  if (gender === 'female') {
+  if (gender === 'Female') {
       const weightCalcNew = weightInGrams * 0.55;
       const BACraw = standardDrinkCalcGram / weightCalcNew;
       let BAC = BACraw * 100;
@@ -81,10 +82,17 @@ const handleCalculate = () => {
           BAC -= BACHoursSUBTRACT;
       }
       setBAC(BAC);
-      console.log(BAC, weight, gender);
-      localStorage.setItem('BAC', BAC.toString());
+      console.log(BAC, weight, gender)
+      navigate('BACpage', { state: { BAC: BAC } });
   }
-  navigate('BACpage');
+
+  if (gender === '') {
+    alert("Please set a gender before calculating your BAC.")
+}
+
+if (weight === 0) {
+  alert("Please set a weight before calculating your BAC.")
+}
 };
 
   const numberDropdownRef = React.useRef(null);

@@ -1,5 +1,7 @@
 // initialBACpage.jsx
 import React, { useContext, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 // import BACContext from './BACContext.js';
 import './BAC.css'
 
@@ -13,8 +15,8 @@ const BACpage = () => {
   const imgNotFound = "https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg"
 
   //BACs
-  const savedBAC = localStorage.getItem('BAC');
-  const initialBAC = savedBAC ? parseFloat(savedBAC) : 0;
+  const location = useLocation();
+  const initialBAC = location.state?.BAC || 0;
   // const { initialBAC } = useContext(BACContext);
   
   //useStates
