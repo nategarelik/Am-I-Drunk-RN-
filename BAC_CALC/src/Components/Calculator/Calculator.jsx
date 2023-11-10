@@ -1,4 +1,4 @@
-import React, { useState, useContext} from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import CalculatorButton from './CalculatorButton';
 import './calculator.css'
 import GenderButt from './GenderButt';
@@ -34,6 +34,10 @@ const Calculator = () => {
   const [showWeightPopup, setShowWeightPopup] = useState(false);
   const [BorgDisplay, setBorgDisplay] = useState('none')
 
+  useEffect(() => {
+    setBAC(0);
+    // Any other initialization logic can go here
+  }, []);
 
   const handleAdd = (value) => {
       setStandardDrinkNum(prevDrinkNum => prevDrinkNum + value);
